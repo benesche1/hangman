@@ -19,7 +19,7 @@ public class Hangman_Versuch_1 {
 		
 		
 		String random_word = words.get(n);
-		System.out.println(random_word);
+		//System.out.println(random_word);
 		boolean have_won = false;
 		int state=0;
 		String[] output_word = new String[words.size()];
@@ -36,9 +36,9 @@ public class Hangman_Versuch_1 {
 		
 		while(have_won!=true) {
 			while(state<21) {
-				System.out.println("\nWählen Sie einen Buchstaben: ");
+				System.out.println("\nWÃ¤hlen Sie einen Buchstaben: ");
 				String input = scanner.next();
-				int[][] wordtest_reponse = wordtest(input, random_word); //rückgabe von wort prüfung 
+				int[][] wordtest_reponse = wordtest(input, random_word); //rÃ¼ckgabe von wort prÃ¼fung 
 				
 				if(wordtest_reponse[0][0]==2) { //richtigs wort gewonnen
 					have_won=true;
@@ -84,7 +84,7 @@ public class Hangman_Versuch_1 {
 }
 
 	public static int[][] wordtest(String input,String word) {
-	String[] selectedWord = word.split("(?<!^)"); 		//zufällig gewähltes wort wird eingelesen und gespallten
+	String[] selectedWord = word.split("(?<!^)"); 		//zufÃ¤llig gewÃ¤hltes wort wird eingelesen und gespallten
 	String[] WordInput = input.split("(?<!^)");   		//eingegebenes wort wird eingelesen und gespallten 
 	int[][] response = new int[2][selectedWord.length]; //Syntax [wort,buchstabe] 0: nicht vorhanden; 1:falsch; 2:richtig
 	
@@ -111,8 +111,8 @@ public class Hangman_Versuch_1 {
 				//System.out.println(selectedWord[i]);
 				
 				if (WordInput[0].toLowerCase().equals(selectedWord[i].toLowerCase())){   //eventuell: (WordInput[1]==selectedWord[i])
-					response[0][1]=2; // wert für prüfung setzenj
-					response[1][i]=1; // wert für position
+					response[0][1]=2; // wert fÃ¼r prÃ¼fung setzenj
+					response[1][i]=1; // wert fÃ¼r position
 					//System.out.println(WordInput[0] + "is true");  //eventuell: System.out.println(WordInput[1] + "is true");
 				
 				
